@@ -4,8 +4,15 @@ const Style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "grey",
-    alignItems: "center",
+  },
+  noData: {
     justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+  },
+  stocksListWrapper: {
+    paddingHorizontal: 16,
+    backgroundColor: "white",
   },
 });
 
