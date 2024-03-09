@@ -21,3 +21,7 @@ npm run android
 ```
 npm run ios
 ```
+
+#### Note
+
+The colors, fontSizes, fontWeights and gaps used are arbitrary
