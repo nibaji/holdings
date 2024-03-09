@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ActivityIndicator, FlatList, SafeAreaView, View } from "react-native";
 
+import Appbar from "./src/components/Appbar";
 import Divider from "./src/components/Divider";
 import StockCard from "./src/components/StockCard";
 import { Paragraph } from "./src/components/Typography";
@@ -52,6 +53,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={Style.container}>
+      <Appbar />
       <View style={Style.stocksListWrapper}>
         <FlatList
           data={userHoldings}
