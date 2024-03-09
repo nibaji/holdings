@@ -43,7 +43,10 @@ export default function Bottombar({ userHoldings }: BottombarProps) {
 
   return (
     <View style={Style.container}>
-      <Pressable onPress={handleArrowTap}>
+      <Pressable
+        onPress={handleArrowTap}
+        hitSlop={{ top: 2, bottom: 8, right: 40, left: 40 }}
+      >
         <View style={expanded ? Style.triangleInverted : Style.triangle} />
       </Pressable>
       {expanded ? (
