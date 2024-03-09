@@ -3,7 +3,7 @@ import { View, FlatList, Pressable } from "react-native";
 
 import TitleValueCard from "./TitleValueCard";
 
-import { Holdings } from "../utils/helpers";
+import { Holdings, adjustTwoDigits } from "../utils/helpers";
 
 import { Bottombar as BottombarProps } from "../types/components/props.types";
 
@@ -57,7 +57,7 @@ export default function Bottombar({ userHoldings }: BottombarProps) {
               return (
                 <TitleValueCard
                   title={`${title}:`}
-                  value={`₹${value}`}
+                  value={`₹${adjustTwoDigits(value)}`}
                   style={Style.separator}
                 />
               );
@@ -68,7 +68,7 @@ export default function Bottombar({ userHoldings }: BottombarProps) {
       ) : null}
       <TitleValueCard
         title={`${titleValuesObj.totalPnL.title}: `}
-        value={`₹${titleValuesObj.totalPnL.value}`}
+        value={`₹${adjustTwoDigits(titleValuesObj.totalPnL.value)}`}
         style={Style.fixedBottomItem}
       />
     </View>

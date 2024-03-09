@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 import { Title, Subtitle, Paragraph } from "./Typography";
 
-import { Stock } from "../utils/helpers";
+import { Stock, adjustTwoDigits } from "../utils/helpers";
 
 import { StockCard as StockCardProps } from "../types/components/props.types";
 
@@ -20,10 +20,10 @@ const StockCard = ({ stock }: StockCardProps) => {
       </View>
       <View style={[Style.verticalWrapper, Style.endAligned]}>
         <Paragraph style={Style.bottomSpacing}>
-          LTP: <Subtitle>₹ {ltp}</Subtitle>
+          LTP: <Subtitle>₹ {adjustTwoDigits(ltp)}</Subtitle>
         </Paragraph>
         <Paragraph>
-          P/L: <Subtitle>₹ {pnl}</Subtitle>
+          P/L: <Subtitle>₹ {adjustTwoDigits(pnl)}</Subtitle>
         </Paragraph>
       </View>
     </View>
