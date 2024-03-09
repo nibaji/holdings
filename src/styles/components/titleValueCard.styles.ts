@@ -7,6 +7,10 @@ const Styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+  p: {
+    fontSize: 15,
+    fontWeight: "500",
+  },
 });
 
 export default Styles;

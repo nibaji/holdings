@@ -3,12 +3,13 @@ import { StyleSheet } from "react-native";
 const Styles = StyleSheet.create({
   title: {
     color: "black",
-    fontWeight: "800",
+    fontWeight: "700",
     fontSize: 15,
   },
   subtitle: {
     color: "black",
-    fontWeight: "600",
+    fontWeight: "700",
+    opacity: 0.8,
   },
   p: {
     color: "black",

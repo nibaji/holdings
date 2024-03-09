@@ -5,6 +5,7 @@ const Styles = StyleSheet.create({
     width: "100%",
     height: 1,
     backgroundColor: "grey",
+    opacity: 0.28,
   },
 });
 

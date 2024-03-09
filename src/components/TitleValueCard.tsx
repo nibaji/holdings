@@ -14,7 +14,7 @@ export default function TitleValueCard({
   return (
     <View style={[Style.container, style]}>
       <Title>{title}</Title>
-      <Paragraph>{value}</Paragraph>
+      <Paragraph style={Style.p}>{value}</Paragraph>
     </View>
   );
 }

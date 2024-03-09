@@ -4,10 +4,12 @@ const Styles = StyleSheet.create({
   bar: {
     width: "100%",
     backgroundColor: "purple",
-    padding: 16,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
   },
   title: {
     color: "white",
+    fontWeight: "600",
   },
 });
 

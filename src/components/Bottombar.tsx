@@ -47,7 +47,7 @@ export default function Bottombar({ userHoldings }: BottombarProps) {
         <View style={expanded ? Style.triangleInverted : Style.triangle} />
       </Pressable>
       {expanded ? (
-        <View>
+        <View style={Style.expandedItems}>
           <FlatList
             data={Object.values(titleValuesObj).filter(
               (item) => !item.showInCollapsedView
@@ -57,7 +57,7 @@ export default function Bottombar({ userHoldings }: BottombarProps) {
               return (
                 <TitleValueCard
                   title={`${title}:`}
-                  value={`₹ ${value}`}
+                  value={`₹${value}`}
                   style={Style.separator}
                 />
               );
@@ -68,7 +68,7 @@ export default function Bottombar({ userHoldings }: BottombarProps) {
       ) : null}
       <TitleValueCard
         title={`${titleValuesObj.totalPnL.title}: `}
-        value={`₹ ${titleValuesObj.totalPnL.value}`}
+        value={`₹${titleValuesObj.totalPnL.value}`}
         style={Style.fixedBottomItem}
       />
     </View>
