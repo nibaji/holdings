@@ -9,6 +9,7 @@ import { Paragraph } from "./src/components/Typography";
 import { UserHoldings } from "./src/types/data.types";
 
 import Style from "./src/styles/screens/app.styles";
+import Bottombar from "./src/components/Bottombar";
 
 export default function App() {
   const [userHoldings, setUserHoldings] = useState<UserHoldings>([]);
@@ -65,6 +66,7 @@ export default function App() {
           ItemSeparatorComponent={() => <Divider />}
         />
       </View>
+      <Bottombar userHoldings={userHoldings} />
     </SafeAreaView>
   );
 }
