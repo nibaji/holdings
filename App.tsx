@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { ActivityIndicator, FlatList, SafeAreaView, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  View,
+} from "react-native";
 
 import Appbar from "./src/components/Appbar";
 import Divider from "./src/components/Divider";
@@ -15,6 +22,10 @@ export default function App() {
   const [userHoldings, setUserHoldings] = useState<UserHoldings>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  const androidSafeAreaPadding = Platform.OS === "android" && {
+    paddingTop: StatusBar.currentHeight,
+  };
 
   async function fetchData() {
     setIsLoading(true);
@@ -38,7 +49,9 @@ export default function App() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={[Style.container, Style.noData]}>
+      <SafeAreaView
+        style={[Style.container, Style.noData, androidSafeAreaPadding]}
+      >
         <ActivityIndicator />
       </SafeAreaView>
     );
@@ -46,14 +59,16 @@ export default function App() {
 
   if (error) {
     return (
-      <SafeAreaView style={[Style.container, Style.noData]}>
+      <SafeAreaView
+        style={[Style.container, Style.noData, androidSafeAreaPadding]}
+      >
         <Paragraph>Something went wrong!</Paragraph>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={Style.container}>
+    <SafeAreaView style={[Style.container, androidSafeAreaPadding]}>
       <Appbar />
       <View style={Style.stocksListWrapper}>
         <FlatList
